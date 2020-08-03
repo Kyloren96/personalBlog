@@ -3,7 +3,7 @@
 <head th:replace="admin/_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Login</title>
+  <title>博客管理登录</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../../static/css/me.css">
 </head>
@@ -18,7 +18,7 @@
        <div class="column">
          <h2 class="ui teal image header">
            <div class="content">
-             Admin Login
+             管理后台登录
            </div>
          </h2>
          <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
@@ -26,20 +26,20 @@
              <div class="field">
                <div class="ui left icon input">
                  <i class="user icon"></i>
-                 <input type="text" name="username" placeholder="username">
+                 <input type="text" name="username" placeholder="用户名">
                </div>
              </div>
              <div class="field">
                <div class="ui left icon input">
                  <i class="lock icon"></i>
-                 <input type="password" name="password" placeholder="passport">
+                 <input type="password" name="password" placeholder="密码">
                </div>
              </div>
-             <button class="ui fluid large teal submit button">Log in</button>
+             <button class="ui fluid large teal submit button">登   录</button>
            </div>
 
            <div class="ui error mini message"></div>
-           <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">Invalid username or password</div>
+           <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">用户名和密码错误</div>
 
          </form>
 
@@ -60,14 +60,14 @@
         identifier: 'username',
         rules: [{
           type : 'empty',
-          prompt: 'Please enter username'
+          prompt: '请输入用户名'
         }]
       },
       password : {
         identifier: 'password',
         rules: [{
           type : 'empty',
-          prompt: 'Please enter password'
+          prompt: '请输入密码'
         }]
       }
     }
